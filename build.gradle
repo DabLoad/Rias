@@ -15,20 +15,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    implementation("net.dv8tion:JDA:5.0.0-beta.5")
+    implementation("net.dv8tion:JDA:5.0.0-beta.8")
     implementation("ch.qos.logback:logback-classic:1.2.8")
     implementation 'io.github.cdimascio:dotenv-java:2.3.2'
     implementation 'com.sedmelluq:lavaplayer:1.3.77'
-    implementation 'org.mongodb:mongodb-driver-sync:4.9.0'
-}
-
-test {
-    useJUnitPlatform()
 }
 
 mainClassName = 'com.donek.projectRias.Bot' //
-def jdaVersion = '5.0.0-beta.5' //
-sourceCompatibility = targetCompatibility = 1.8
+def jdaVersion = '5.0.0-beta.8' //
+sourceCompatibility = targetCompatibility = 18
 compileJava.options.encoding = 'UTF-8'
