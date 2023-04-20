@@ -9,7 +9,7 @@ Developed using this libs:
 
 **Setup:**
 
-1) Clone repo
+1) Download release
 
 2) Write your `token` to .env file
 
