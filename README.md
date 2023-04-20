@@ -1,6 +1,6 @@
 **Project Rias**
 
-Simple JDA music and chat reactions discord bot.
+Simple music and chat reactions discord bot.
 
 Developed using this libs:
 
