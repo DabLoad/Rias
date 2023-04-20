@@ -1,4 +1,4 @@
-**Project Rias** - jda discord music bot
+**Project Rias** - opensource JDA discord music bot
 
 Simple music and chat reactions discord bot.
 
