@@ -16,7 +16,7 @@ Developed using this libs:
 3) Start bot: `java -jar Rias-1.0-all.jar` - jdk-18 required!
 
 Bot working directory example:
-* `Rias-1.0.jar`
+* `Rias-1.0-all.jar`
 * `.env`
 
 
