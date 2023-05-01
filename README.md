@@ -32,3 +32,4 @@ Bot working directory example:
 * `/stop`
 * `/leave`
 
+Give me a star :D
