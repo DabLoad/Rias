@@ -1,5 +1,7 @@
 **Project Rias** - opensource JDA discord music bot
 
+`https://discord.com/api/oauth2/authorize?client_id=963666422200926208&permissions=35719099186240&scope=bot`
+
 Simple music and chat reactions discord bot.
 
 Developed using this libs:
