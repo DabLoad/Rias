@@ -13,7 +13,7 @@ Developed using this libs:
 
 2) Write your `token` to .env file
 
-3) Start bot: `java -jar Rias-1.0-all.jar` - jdk-18 required!
+3) Start bot: `java -jar Rias-1.0-all.jar` - jdk-16 required!
 
 Bot working directory example:
 * `Rias-1.0-all.jar`
