@@ -51,8 +51,10 @@ public class PlayCommand extends ListenerAdapter {
                 String trackUrl = youtubeUrl.getAsString();
                 if (!isUrl(trackUrl)) {
                     trackUrl = "ytsearch:" + trackUrl;
+                    PlayerManager.getInstance().loadAndPlay(channel, trackUrl, true, event);
+                } else {
+                    PlayerManager.getInstance().loadAndPlay(channel, trackUrl, false, event);
                 }
-                PlayerManager.getInstance().loadAndPlay(channel, trackUrl, event);
             }
             else if (!memberVoiceState.getChannel().asVoiceChannel().equals(selfVoiceState.getChannel().asVoiceChannel())){
                 event.getHook().sendMessage("You’re supposed to be on my voice channel for this to work").queue();

@@ -40,7 +40,7 @@ public class PlayerManager extends ListenerAdapter {
             return guildMusicManager;
         });
     }
-    public void loadAndPlay(TextChannel channel, String trackUrl, SlashCommandInteractionEvent event){
+    public void loadAndPlay(TextChannel channel, String trackUrl, boolean isTextSearch, SlashCommandInteractionEvent event){
         final GuildMusicManager musicManager = this.getMusicManager(channel.getGuild());
         this.audioPlayerManager.loadItemOrdered(musicManager, trackUrl, new AudioLoadResultHandler() {
             @Override
@@ -58,16 +58,28 @@ public class PlayerManager extends ListenerAdapter {
 
             @Override
             public void playlistLoaded(AudioPlaylist playlist) {
-                final List<AudioTrack> tracks = playlist.getTracks();
-                for (final AudioTrack track: tracks) {
+                if (!isTextSearch) {
+                    final List<AudioTrack> tracks = playlist.getTracks();
+                    for (final AudioTrack track: tracks) {
+                        musicManager.scheduler.queue(track);
+                    }
+                    event.getHook().sendMessage("To the queue was added - `"
+                                    + String.valueOf(tracks.size())
+                                    + "` tracks from playlist: `"
+                                    + playlist.getName()
+                                    + "`")
+                            .queue();
+                } else {
+                    final List<AudioTrack> tracks = playlist.getTracks();
+                    AudioTrack track = tracks.get(0);
                     musicManager.scheduler.queue(track);
+                    event.getHook().sendMessage("The track was added to the queue: `"
+                                    + track.getInfo().title
+                                    + "` by `"
+                                    + track.getInfo().author
+                                    + "`")
+                            .queue();
                 }
-                event.getHook().sendMessage("To the queue was added - `"
-                                + String.valueOf(tracks.size())
-                                + "` tracks from playlist: `"
-                                + playlist.getName()
-                                + "`")
-                        .queue();
 
             }
 
