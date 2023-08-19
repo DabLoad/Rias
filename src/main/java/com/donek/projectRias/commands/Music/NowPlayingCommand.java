@@ -40,13 +40,13 @@ public class NowPlayingCommand extends EventListener {
             final AudioTrack track = audioPlayer.getPlayingTrack();
 
             if (track == null) {
-                event.getHook().sendMessage("Сейчас ничего не проигрывается").queue();
+                event.getHook().sendMessage("Nothing is playing now").queue();
                 return;
             }
 
             final AudioTrackInfo info = track.getInfo();
 
-            event.getHook().sendMessageFormat("Сейчас проигрывается: `%s` by `%s` (Link: <%s>)", info.title, info.author, info.uri).queue();
+            event.getHook().sendMessageFormat("Now playing: `%s` by `%s` (Link: <%s>)", info.title, info.author, info.uri).queue();
         }
     }
 }
